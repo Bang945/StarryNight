@@ -1,0 +1,6 @@
+class ExampleMigration < ActiveRecord::Migration
+    change_table :favors do |f|
+      f.remove :label
+      f.integer :label
+    end
+end

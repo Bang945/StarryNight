@@ -1,0 +1,12 @@
+class CreateComments < ActiveRecord::Migration
+  def change
+    create_table :comments do |t|
+      t.string :commenter
+      t.text :body
+      t.string :contact
+      t.references :diary, index: true
+
+      t.timestamps
+    end
+  end
+end

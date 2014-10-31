@@ -1,0 +1,41 @@
+<style>
+  .email {
+	padding:100px 0 50px;
+	margin: 20px 0 10px;
+	}
+  .message{
+	padding:20px;
+	background-color:rgba(0, 0, 0, 0.5);
+	text-align:center;
+}
+  .message-item {
+	padding: 0 15%;
+	text-align:left;
+}
+
+#mail{
+	float:right;
+	margin:0 auto;
+}
+
+</style>
+
+<div class="row-fluid">
+   <div id="mail" class="span6">
+   <div class="email">
+   <div class="span8 message">
+     <div class="message-item">
+   	<h3 class="form-signin-heading">Leave A Message To Me</h3>
+  	<%= form_tag(controller:"messages", action:"create") do %>
+     	<%= label_tag(:contact, "Your Email:") %>
+     	<%= text_field_tag(:contact) %>
+     	<%= label_tag(:body, "Your Message:") %>
+     	<%= text_area_tag(:body) %>
+     	<div><%= submit_tag("Send", class: 'btn') %></div>
+   	<% end %>
+     </div>
+   </div><!-- /message-->
+   </div><!-- /email-->
+   </div><!-- /span4 -->
+</div>
+

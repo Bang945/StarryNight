@@ -1,0 +1,17 @@
+# Load the Rails application.
+require File.expand_path('../application', __FILE__)
+
+# Initialize the Rails application.
+Rails.application.initialize!
+
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.server_settings = {
+   :address => "smtp.qq.com",
+   :port => 25,
+   :domain => "qq.com",
+   :authentication => :login,
+   :user_name => "291763531",
+   :password => "password",
+}
+

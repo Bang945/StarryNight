@@ -1,0 +1,5 @@
+DIARY_FILE_PATH = "/Files/diary/"
+
+DIARY_LABEL = {"Wundering", "Hanging", "Hunting"}
+FAVOR_LABEL = {"Movies", "Books", "Sports", "Places", "Collects"}
+CONTACTS_LABEL = {"Email", "Social"}

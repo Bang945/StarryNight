@@ -1,0 +1,10 @@
+class ChangeFavorsLabel < ActiveRecord::Migration
+  def change
+    reversible do |dir|
+      change_table :favors do |t|
+        dir.up   { t.change :label, :string }
+        dir.down { t.change :label, :integer }
+      end
+    end
+  end
+end

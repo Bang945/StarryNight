@@ -1,0 +1,8 @@
+<div class="row-fluid">
+	    <% @messages.each do |message| %>
+       		
+		  <%= message.contacts %>
+                  <div class = "favoritem"><%= message.body %> </div>
+               
+           <% end %>
+	  </div

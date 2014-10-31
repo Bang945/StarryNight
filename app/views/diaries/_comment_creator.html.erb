@@ -1,0 +1,15 @@
+<div class="comment">
+                           <%= form_for([@diary, @diary.comments.build]) do |f| %>
+                           
+    				<%= f.label :commenter %>
+    				<%= f.text_field :commenter %>
+  			  
+  			  
+    				<%= f.label :body %>
+    				<%= f.text_area :body %>
+  			  
+  			 <p>
+   				<%= f.submit "comment"%>
+  			</p>
+			<% end %>
+</div>

@@ -1,0 +1,17 @@
+class ContactsController < ApplicationController
+    def index
+	@label = params[:label]
+	if @label.nil? 
+            @label = 2
+ 	end
+        @contacts = Contact.where(label: @label)
+     
+    end
+
+    def create
+       @from = params["from"]
+       @message = params["message"]
+       EmailSender.greeting_email(@from, @message).deliver
+       redirect_to contacts_url, notice: "Success"
+    end
+end

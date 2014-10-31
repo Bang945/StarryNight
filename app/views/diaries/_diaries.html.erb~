@@ -1,0 +1,38 @@
+<style>
+  .diary-item {
+	margin: 30px 0;
+	padding:30px;
+	color: rgb(184,172,169);
+  }
+  .diary-text {
+	margin: 30px auto;
+  }
+  .comments {
+	margin:50px auto;
+	padding:50px auto;
+	color:rgb(166,171,172);
+  }
+
+
+</style>
+
+<div class="row-fluid" id = "diary">
+	    <% i = 1 %>
+	    <% @diaries.each do |diary| %>
+            <% @diary = diary %>
+       		<div class="diary-item">
+		  <h3><%= @diary.title %></h3>
+                  <p class="blog-post-meta"><%= @diary.create_date %></p>
+		  <%= link_to "Detail", "#content"+i.to_s, data: {toggle:"collapse", parent:"#diary",} %>
+		     <div id="content<%=i%>" class="panel-collapse collapse">
+		     <p><div class = "diary-text"><%= data = File.read(GlobalConstants::DIARY_FILE_PATH+ @diary.name) %> </div></p>
+                     <% i = i + 1 %>	
+                     <div class="comments">
+                        <%= render "comments" %>
+
+                        <%= render "comment_creator" %>
+                     </div>
+ 		     </div><!-- /collapse-->
+                </div><!-- /blog-post -->
+           <% end %>
+	  </div><!--/hero-unit -->
