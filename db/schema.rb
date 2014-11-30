@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20141020075223) do
 
   create_table "favors", force: true do |t|
     t.text     "content"
+    t.text     "desription"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
