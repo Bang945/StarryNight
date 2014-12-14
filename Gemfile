@@ -31,13 +31,17 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+group :doc do
+gem 'sdoc', '~> 0.4.0'
+end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #gem 'spring',        group: :development
 
 #gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails', :branch => 'master'
-gem 'bootstrap-sass','~> 3.2.0', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass',	group: :assets
+group :assets do
+  gem 'bootstrap-sass','~> 3.2.0', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass'
+end
 #gem 'autoprefixer-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

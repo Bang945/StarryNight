@@ -1,74 +1,71 @@
 <style>
-  body {
-        padding-top: 60px;
-        padding-bottom: 40px;
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
 	/*
 	background-color:rgb(26, 31, 50);*/	
 	background: url('/assets/starry.jpg') no-repeat center center fixed;
 	background-size: cover; 
 	
-      }
+}
 
-   @font-face {
+@font-face {
 	font-family: basicFont;
 	src: url(sansation_bold.woff)	
-	}
-   div {
-	font-family:"Times New Roman", Times, serif;
-	color: rgb(225,216,118);
-	}
-   .contact{padding:50px;}
-   .contact-link {
+}
+
+.contact{padding:50px;}
+.contact-link {
 	padding:10px;
 	text-align:center;
+}
+
+
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
+}
 
-
-      @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-        .navbar-text.pull-right {
-          float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
-
-   a:hover, a:focus {
+a:hover, a:focus {
 	text-decoration: none;
 	color:rgb(79,114,94);
-   }
-  a {
-        color:rgb(225,216,118);
-    }
+}
+a {
+	color:rgb(225,216,118);
+}
 
 </style>
 
- <%= render "share/navibar" %>
+<%= render "share/navibar" %>
 
 <!-- Left Side Navi Bar -->
    <!-- <div class="container-fluid">
-     <!-- <div class="row-fluid"> -->
+   <!-- <div class="row-fluid"> -->
 
-	<div class="row-fluid">
-	    
-	        <%= render "email" %>
-           
-	  </div><!--/hero-unit -->
+   <div class="row-fluid font-moon">
+   	
+   	<%= render "email" %>
+   	
+   </div><!--/hero-unit -->
 
 
-       <!-- </div>--/container-->
-		<div class="navbar-fixed-bottom contact">
-		<center>
-		<% @contacts.each do |contact| %>   
-		<% if contact.label == 1 %>  
-                <span class="contact-link"><%= link_to "Gmail", "mailto:" + contact.content%></span>
-		<% else %>
-       		<span class="contact-link"><a href="http://<%= contact.link %>"> <%= contact.content %></span>
-		<% end %>
-		<% end %> 
-		</center>
-         	</div>
-       
+   <!-- </div>--/container-->
+   <div class="navbar-fixed-bottom contact font-moon">
+   	<center>
+   		<% @contacts.each do |contact| %>   
+   		<% if contact["label"] == 1 %>  
+   		<span class="contact-link"><%= link_to "Gmail", "mailto:" + contact["content"] %></span>
+   		<% else %>
+   		<span class="contact-link"><a href="http://<%= contact['link'] %>"> <%= contact["content"] %></span>
+   		<% end %>
+   		<% end %> 
+   	</center>
+   </div>
+   
 
 
 

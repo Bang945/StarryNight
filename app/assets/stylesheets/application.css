@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ .font-moon {
+	font-family:"Times New Roman", Times, serif;
+	color: rgb(225,216,118);
+}
+
+.font-white {
+	color: white;
+}

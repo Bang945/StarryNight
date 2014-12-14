@@ -1,18 +1,24 @@
-<style>
-
-  body {
+<style>    
+body {
         padding-top: 60px;
         padding-bottom: 40px;
-	background-color:rgb(26, 31, 50);
-      }
-      .sidebar-nav {
-        padding: 9px 0;
+        background-color:rgb(26, 31, 50);
+      }  body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+  background-color:rgb(26, 31, 50);
       }
 
-  .blog-post-meta {
-       border-top: 1px solid rgb(225,216,118);
+/*      .sidebar-nav {
+        padding: 9px 0;
+}*/
+      
+
+/*  .blog-post-meta {
+       #border-top: 1px solid rgb(225,216,118);
        color: #999;
-   }
+   }*/
+
   .nav-fixed {position: fixed; margin:50px 0;}
 
 
@@ -24,61 +30,45 @@
           padding-right: 5px;
         }
       }
-#diary {
-	float:right
-	text-align: center;
-}
 
 .diaries {
-	padding: 0 20px;
-	margin:20px, 180px;
-	text-align:left;
+  padding: 0 20px;
+  margin:20px, 180px;
+  text-align:left;
 }
-li { padding: 3px 0;}
+
+
    a:hover, a:focus {
-	text-decoration: none;
-	color:rgb(79,114,94);
+  text-decoration: none;
+  color:white;
    }
   a {
         color:rgb(225,216,118);
     }
   .transparent {
-	padding:30px 30px;
-	background-color:rgba(0, 0, 0, 0.2);
+  padding:30px 30px;
+  background-color:rgba(0, 0, 0, 0.2);
 }
 </style>
+   <%= render "share/navibar" %>
 
- <%= render "share/navibar" %>
+   <div class="span3">
+    <!-- <div class="well sidebar-nav"> -->
+    <ul class="nav nav-pills nav-fixed">
 
-        <div class="span3">
-          <!-- <div class="well sidebar-nav"> -->
-            <ul class="nav nav-pills nav-fixed">
-		
-	<div class="transparent">
-		<h4> Diaries </h4>
-	      <li class="active"><%= link_to 'All', diaries_path %></li>
-	        <% @labels = GlobalConstants::DIARY_LABEL %>
-		<% for i in 1..(@labels.size - 1) %>
-                   <li><%= link_to @labels[i], diaries_path(:label => i) %></li>
-                <% end %>  
-        </div><!--</div>/.well -->
-            </ul>
-        </div><!--/span-->
+     <div class="transparent font-white">
+      <h4> Diaries </h4>
+      <li class="active"><%= link_to 'All', diaries_path %></li>
+      <% @labels = GlobalConstants::DIARY_LABEL %>
+      <% for i in 1..(@labels.size - 1) %>
+      <li><%= link_to @labels[i], diaries_path(:label => i) %></li>
+      <% end %>  
+    </div><!--</div>/.well -->
+  </ul>
+</div><!--/span-->
 
-	<div id="diary" class="span12">
-	   <div class="diaries">
-	    <%= render "diaries" %>
-	   </div>
+<div id="diary" class="span12">
+  <div class="diaries">
+   <%= render "diaries" %>
+ </div>
 	</div><!--/span-->
-
-
-
-
-
-
-
-
-
-
-
-

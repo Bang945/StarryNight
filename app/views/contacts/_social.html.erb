@@ -1,5 +1,5 @@
 <% @contacts.each do |contact| %>
        		
-     <div class = "favoritem"><%= link_to contact.content, contact.link %>  </div>
+     <div class = "favoritem"><%= link_to contact["content"], contact["link"] %>  </div>
                
 <% end %>
