@@ -15,7 +15,7 @@ module FavorRecords
 		{"name" => "Swimming", "content" => "游泳", "label" => 3}, 
 		{"name" => "PingPong", "content" => "乒乓球", "label" => 3}, 
 		{"name" => "Running", "content" => "跑步", "label" => 3}, 
-		{"name" => "Hiking", "content" => "Hiking", "label" => 3},
+		{"name" => "Hiking", "content" => "爬山", "label" => 3},
 
 
 		{"name" => "Pop", "content" => "流行", "label" => 4},
