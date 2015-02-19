@@ -1,13 +1,8 @@
 <style>
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-	/*
-	background-color:rgb(26, 31, 50);*/	
-	background: url('/assets/starry.jpg') no-repeat center center fixed;
-	background-size: cover; 
-	
-}
+
+    .space {
+    	height: 360px;
+    }
 
 @font-face {
 	font-family: basicFont;
@@ -39,32 +34,38 @@ a {
 }
 
 </style>
+
 <%= render "share/navibar" %>
 
 <!-- Left Side Navi Bar -->
    <!-- <div class="container-fluid">
    <!-- <div class="row-fluid"> -->
 
-   <div class="row-fluid font-moon">
-   	
-   	<%= render "email" %>
-   	
-   </div><!--/hero-unit -->
 
+<div class="contact-body">
 
-   <!-- </div>--/container-->
-   <div class="navbar-fixed-bottom contact font-moon">
-   	<center>
-   		<% @contacts.each do |contact| %>   
-   		<% if contact["label"] == 1 %>  
-   		<span class="contact-link"><%= link_to "Gmail", "mailto:" + contact["content"] %></span>
-   		<% else %>
-   		<span class="contact-link"><a href="http://<%= contact['link'] %>"> <%= contact["content"] %></span>
-   		<% end %>
-   		<% end %> 
-   	</center>
-   </div>
-   
+   	<div class="row-fluid font-moon">
+
+   		<%= render "email" %>
+
+   	</div><!--/hero-unit -->
+
+<div class="space">
+<div>
+
+   	<!-- </div>--/container-->
+   	<div class="navbar-fixed-bottom contact font-moon">
+   		<center>
+   			<% @contacts.each do |contact| %>   
+   			<% if contact["label"] == 1 %>  
+   			<span class="contact-link"><%= link_to "Gmail", "mailto:" + contact["content"] %></span>
+   			<% else %>
+   			<span class="contact-link"><a href="http://<%= contact['link'] %>"> <%= contact["content"] %></span>
+   			<% end %>
+   			<% end %> 
+   		</center>
+   	</div>
+</div>
 
 
 
