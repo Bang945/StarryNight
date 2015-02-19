@@ -40,7 +40,8 @@ end
 
 #gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails', :branch => 'master'
 group :assets do
-  gem 'bootstrap-sass','~> 3.2.0', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass'
+#  gem 'bootstrap-sass','~> 3.2.0', :git => 'https://github.com/thomas-mcdonald/bootstrap-sass'
+  gem 'bootstrap-sass','~> 3.2.0'
 end
 #gem 'autoprefixer-rails'
 # Use ActiveModel has_secure_password
