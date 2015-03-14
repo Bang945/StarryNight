@@ -24,7 +24,14 @@
                   <p class="blog-post-meta"><%= @diary.create_date %></p>
 		  <%= link_to "Detail", "#content"+i.to_s, data: {toggle:"collapse", parent:"#diary",} %>
 		     <div id="content<%=i%>" class="panel-collapse collapse">
-		     <p><div class = "diary-text"><%= data = File.read(GlobalConstants::DIARY_FILE_PATH+ @diary.name) %> </div></p>
+          <% %>
+		     <p><div class = "diary-text">
+
+          <% File.open(GlobalConstants::DIARY_FILE_PATH+ @diary.name).each do |line| %>
+          <%= line %>
+          <Br/>
+          <% end %>
+          </div></p>
                      <% i = i + 1 %>	
                      <div class="comments">
                         <%= render "comments" %>
